@@ -8,7 +8,7 @@ const execPromise = promisify(exec)
 /* MAC PLAY COMMAND */
 const macPlayCommand = (path, volume) => `afplay \"${path}\" -v ${volume}`
 
-const linuxPlayCommand = (path, volume) => `ffplay -volume ${volume} -nodisp -exitonkeydown -autoexit \"${path}\"`
+const linuxPlayCommand = (path, volume) => `ffplay -volume ${volume} -nodisp -exitonkeydown \"${path}\"`
 
 /* WINDOW PLAY COMMANDS */
 const addPresentationCore = `Add-Type -AssemblyName presentationCore;`

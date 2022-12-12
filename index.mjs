@@ -1,11 +1,14 @@
 import soundboard from './src/soundboard.mjs'
 import easymidi from 'easymidi'
+import events from 'events';
 
-const device = easymidi.getInputs()[1];
+const device = easymidi.getInputs()[0];
 const input = new easymidi.Input(device);
+const emitter = new events.EventEmitter()
 
 input.on('noteon', (msg) => {
 	console.log(msg);
+  emitter.emit("keydown", "a");
   switch(msg.note) {
     case 3:
       soundboard.play('allahu');
