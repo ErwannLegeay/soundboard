@@ -74,39 +74,42 @@ input.on('noteon', (msg) => {
       soundboard.play('ta-gueule-2');
       break;
     case 64:
-      soundboard.play('zemmour-tousse');
+      soundboard.play('taisez-vous');
       break;
     case 65:
-      soundboard.play('zdedededex');
+      soundboard.play('zemmour-tousse');
       break;
     case 66:
-      soundboard.play('seth-guex-blaksh');
+      soundboard.play('zdedededex');
       break;
     case 67:
-      soundboard.play('seth-gueko-piece-jointe');
+      soundboard.play('seth-guex-blaksh');
       break;
     case 68:
-      soundboard.play('zblerksh');
+      soundboard.play('seth-gueko-piece-jointe');
       break;
     case 69:
-      soundboard.play('kaaris-27');
+      soundboard.play('zblerksh');
       break;
     case 70:
-      soundboard.play('kaaris-puuteuh');
+      soundboard.play('kaaris-27');
       break;
     case 71:
-      soundboard.play('kaaris-sevran');
+      soundboard.play('kaaris-puuteuh');
       break;
     case 72:
-      soundboard.play('kaaris-men-bat-les-couilles-frere');
+      soundboard.play('kaaris-sevran');
       break;
     case 73:
-      soundboard.play('kalash-sauvagerie');
+      soundboard.play('kaaris-men-bat-les-couilles-frere');
       break;
     case 74:
-      soundboard.play('ekip');
+      soundboard.play('kalash-sauvagerie');
       break;
     case 75:
+      soundboard.play('ekip');
+      break;
+    case 76:
       soundboard.play('pute-pute-pute');
       break;
     default:
