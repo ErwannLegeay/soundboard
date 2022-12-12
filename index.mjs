@@ -1,12 +1,11 @@
 import soundboard from './src/soundboard.mjs'
 import easymidi from 'easymidi'
 
-const input = new easymidi.Input('VMini Out');
-
-//const port = process.env.PORT || 8000;
-//const app = express()
+const device = easymidi.getInputs()[1];
+const input = new easymidi.Input(device);
 
 input.on('noteon', (msg) => {
+	console.log(msg);
   switch(msg.note) {
     case 3:
       soundboard.play('allahu');
@@ -107,41 +106,11 @@ input.on('noteon', (msg) => {
     case 74:
       soundboard.play('ekip');
       break;
-    default:
+    case 75:
       soundboard.play('pute-pute-pute');
       break;
+    default:
+      soundboard.play('dj-horn');
+      break;
   }
-})
-
-// log incoming requests
-/*app.use(morgan('tiny'))
-
-app.get('/', (req, res) => {
-    res.json(Array.from(soundboard.soundList))
-})
-app.get('/play/:sound', (req, res) => {
-    if (!soundboard.soundList.has(req.params.sound)) {
-        res
-            .status(404)
-            .json({code: 404, message: `unknown sound '${req.params.sound}'`})
-    } else {
-        soundboard.play(req.params.sound)
-        res
-        .writeHead(200, {
-            'Content-Length': Buffer.byteLength(''),
-            'Content-Type': 'text/plain',
-          })
-          .end('')
-    }
-})
-app.use(async (err, req, res, next) => {
-    console.error(err.stack)
-    res
-        .status(500)
-        .json({message: err.message, code: 500, label: "Internal Server Error"})
-})
-
-app.listen(port, () => {
-    console.log(`Soundboard listening on port ${port}`)
-    console.log(easymidi.getInputs());
-})*/
+});
